@@ -113,6 +113,39 @@ namespace Sypermarket
             Console.WriteLine("Продуктът е добавен успешно!");
         }
 
+        static void SellProduct(List<Product> products)
+        {
+            Console.Write("Въведете име на продукта: ");
+            string name = Console.ReadLine();
+
+            Product p = products.Find(x => x.Name == name);
+
+            if (p == null)
+            {
+                Console.WriteLine("Няма такъв продукт!");
+                return;
+            }
+
+            Console.Write("Количество за продажба: ");
+            int quantity = int.Parse(Console.ReadLine());
+
+            if (p.Quantity >= quantity)
+            {
+                double totalPrice = quantity * p.Price;
+
+                p.Quantity -= quantity;
+
+                SaveProducts(products);
+
+                Console.WriteLine($"Обща цена: {totalPrice} лв.");
+                Console.WriteLine("Продажбата е успешна.");
+            }
+            else
+            {
+                Console.WriteLine("Недостатъчно количество!");
+            }
+        }
+
         static void ShowProducts(List<Product> products)
 
         {
