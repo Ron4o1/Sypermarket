@@ -42,6 +42,9 @@ namespace Sypermarket
                     case "4":
                         ShowInventory(products);
                         break;
+
+                    case "5":
+                        return;
                 }
 
             }
