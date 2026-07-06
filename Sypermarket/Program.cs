@@ -40,7 +40,7 @@ namespace Sypermarket
                         break;
 
                     case "4":
-                        ShowInventory(products);
+                        ShowProducts(products);
                         break;
 
                     case "5":
@@ -63,13 +63,14 @@ namespace Sypermarket
 
                 foreach (string line in lines)
                 {
-                    string[] parts = line.Split(',');
+                    string[] data = line.Split(',');
 
                     Product p = new Product(
                         data[0],
                         data[1],
                         data[2],
-                        double.Parse(data[4])
+                        double.Parse(data[3]),
+                        int.Parse(data[4])
                         );
                 }
             }
@@ -165,9 +166,7 @@ namespace Sypermarket
         }
 
         static void ShowProducts(List<Product> products)
-
         {
-
             Console.WriteLine();
 
             foreach (Product p in products)
