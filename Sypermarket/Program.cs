@@ -65,6 +65,13 @@ namespace Sypermarket
                     case "4":
                         ShowProducts(products);
                         break;
+
+                    case "5":
+                        return;
+
+                    default:
+                        Console.WriteLine("Невалиден избор!");
+                        break;
                 }
             }
         }
