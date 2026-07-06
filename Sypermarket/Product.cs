@@ -21,7 +21,10 @@ namespace Sypermarket
 
         public int Quantity { get; set; }
 
-     
+     public Product()
+        {
+
+        }
         }
     }
 }
