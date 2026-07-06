@@ -45,6 +45,10 @@ namespace Sypermarket
 
                     case "5":
                         return;
+
+                    default:
+                        Console.WriteLine("Невалиден избор. Моля, опитайте отново.");
+                        break;
                 }
 
             }
