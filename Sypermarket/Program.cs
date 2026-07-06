@@ -7,10 +7,10 @@ namespace Sypermarket
 {
     internal class Program
     {
-        static string fileName = "products.txt";
+        private const string FilePath = "products.txt";
         static void Main(string[] args)
         {
-            List<Product> products = LoadProducts(fileName);
+            List<Product> products = LoadProducts(FilePath);
 
             while (true)
             {
@@ -85,7 +85,7 @@ namespace Sypermarket
             {
                 lines.Add($"{p.ProductID},{p.Name},{p.Category},{p.Price},{p.Quantity}");
             }
-            File.WriteAllLines(fileName, lines);
+            File.WriteAllLines(FilePath, lines);
         }
 
         static void AddProduct(List<Product> products)
