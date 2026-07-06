@@ -30,6 +30,10 @@ namespace Sypermarket
                     case "1":
                         AddProduct(products);
                         break;
+
+                    case "2":
+                        SellProduct(products);
+                        break;
                 }
 
             }
