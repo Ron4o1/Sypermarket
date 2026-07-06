@@ -10,7 +10,7 @@ namespace Sypermarket
         static string fileName = "products.txt";
         static void Main(string[] args)
         {
-           List<Product> products = LoadProducts(fileName);
+            List<Product> products = LoadProducts(fileName);
 
             while (true)
             {
@@ -50,48 +50,31 @@ namespace Sypermarket
                         Console.WriteLine("Невалиден избор. Моля, опитайте отново.");
                         break;
                 }
+            }
+        }
 
-
-
-
-
-
-static void ShowProducts(List<Product> products)
+        static void ShowProducts(List<Product> products)
 
         {
 
             Console.WriteLine();
 
             foreach (Product p in products)
-
             {
 
-                Console.WriteLine(“--------------------“);
+                Console.WriteLine("--------------------");
 
-                Console.WriteLine($”ID: {p.ProductID}”);
+                Console.WriteLine($"ID: { p.ProductID}");
 
-                Console.WriteLine($”Име: {p.Name}”);
+                Console.WriteLine($"Име: { p.Name}");
 
-                Console.WriteLine($”Категория: {p.Category}”);
+                Console.WriteLine($"Категория: { p.Category}");
 
-                Console.WriteLine($”Цена: {p.Price} лв.”);
+                Console.WriteLine($"Цена: { p.Price} лв.");
 
-                Console.WriteLine($”Количество: {p.Quantity}”);
-
-            }
-
-
-
-
-
-
-
-
-
-                
+                Console.WriteLine($"Количество: { p.Quantity}");
 
             }
-            
         }
     }
 }
