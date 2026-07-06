@@ -86,7 +86,7 @@ namespace Sypermarket
 
                 foreach (string line in lines)
                 {
-                    string[] data = line.Split(',');
+                    string[] data = line.Split('.');
 
                     Product p = new Product(
                         data[0],
@@ -100,15 +100,14 @@ namespace Sypermarket
             return products;
         }
 
-        static void SaveProducts(List<Product> products)
+        static void SaveProductsToFile(List<Product> products)
         {
-            List<string> lines = new List<string>();
-
+            List<string> rows = new List<string>();
             foreach (Product p in products)
             {
-                lines.Add($"{p.ProductID},{p.Name},{p.Category},{p.Price},{p.Quantity}");
+                rows.Add(p.ToFileRows());
             }
-            File.WriteAllLines(FilePath, lines);
+            File.WriteAllLines(FilePath, rows);
         }
 
         static void AddProduct(List<Product> products)

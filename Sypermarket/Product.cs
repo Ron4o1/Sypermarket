@@ -8,6 +8,15 @@ namespace Sypermarket
 {
      class Product
     {
+        public Product(string productID, string name, string category, double price, int quantity)
+        {
+            ProductID = productID;
+            Name = name;
+            Category = category;
+            Price = price;
+            Quantity = quantity;
+        }
+
         public string ProductID { get; set; }
 
         public string Name { get; set; }
@@ -18,17 +27,24 @@ namespace Sypermarket
 
         public int Quantity { get; set; }
 
-     public Product()
+        public string ToFileRow()
         {
-
+            return $"{ProductID};{Name};{Category};{Price};{Quantity}";
         }
-        public Product(string id, string name, string category, double price, int quantity)
+
+        public Product FromFileRow(string row)
         {
-            ProductID = id;
-            Name = name;
-            Category = category;
-            Price = price;
-            Quantity = quantity;
+            string[] parts = row.Split(';');
+            if (parts.Length == 5)
+            {
+                string productID = parts[0];
+                string name = parts[1];
+                string category = parts[2];
+                double price = double.Parse(parts[3]);
+                int quantity = int.Parse(parts[4]);
+                return new Product(productID, name, category, price, quantity);
+            }
+            return null;
         }
      }
  }
