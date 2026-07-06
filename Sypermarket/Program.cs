@@ -49,7 +49,7 @@ namespace Sypermarket
                         Product newProduct = new Product(productID, name, category, price, quantity);
                         products.Add(newProduct);
 
-                        SaveProducts(products);
+                        SaveProductsToFile(products);
                         Console.WriteLine("Успешно добавен нов запис!");
                         Console.WriteLine();
                         break;
@@ -105,7 +105,7 @@ namespace Sypermarket
             List<string> rows = new List<string>();
             foreach (Product p in products)
             {
-                rows.Add(p.ToFileRows());
+                rows.Add(p.ToFileRow());
             }
             File.WriteAllLines(FilePath, rows);
         }
@@ -131,7 +131,7 @@ namespace Sypermarket
 
             products.Add(p);
 
-            SaveProducts(products);
+            SaveProductsToFile(products);
 
             Console.WriteLine("Продуктът е добавен успешно!");
         }
@@ -158,7 +158,7 @@ namespace Sypermarket
 
                 p.Quantity -= quantity;
 
-                SaveProducts(products);
+                SaveProductsToFile(products);
 
                 Console.WriteLine($"Обща цена: {totalPrice} лв.");
                 Console.WriteLine("Продажбата е успешна.");
