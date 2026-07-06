@@ -146,6 +146,24 @@ namespace Sypermarket
             }
         }
 
+        static void CheckProduct(List<Product> products)
+        {
+            Console.Write("Въведете име на продукта: ");
+            string name = Console.ReadLine();
+
+            Product p = products.Find(x => x.Name == name);
+
+            if (p != null)
+            {
+                Console.WriteLine($"Цена: {p.Price} лв.");
+                Console.WriteLine($"Налично количество: {p.Quantity}");
+            }
+            else
+            {
+                Console.WriteLine("Няма такъв продукт.");
+            }
+        }
+
         static void ShowProducts(List<Product> products)
 
         {
