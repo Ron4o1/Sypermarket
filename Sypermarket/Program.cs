@@ -10,6 +10,8 @@ namespace Sypermarket
         private const string FilePath = "products.txt";
         static void Main(string[] args)
         {
+            Console.WriteLine(File.Exists(FilePath));
+            Console.WriteLine(Path.GetFullPath(FilePath));
             List<Product> products = LoadProducts(FilePath);
 
             while (true)
@@ -53,13 +55,13 @@ namespace Sypermarket
             }
         }
 
-        static List<Product> LoadProducts(string fileName)
+        static List<Product> LoadProducts(string FilePath)
         {
             List<Product> products = new List<Product>();
 
-            if (File.Exists(fileName))
+            if (File.Exists(FilePath))
             {
-                string[] lines = File.ReadAllLines(fileName);
+                string[] lines = File.ReadAllLines(FilePath);
 
                 foreach (string line in lines)
                 {
