@@ -53,6 +53,29 @@ namespace Sypermarket
             }
         }
 
+        static List<Product> LoadProducts(string fileName)
+        {
+            List<Product> products = new List<Product>();
+
+            if (File.Exists(fileName))
+            {
+                string[] lines = File.ReadAllLines(fileName);
+
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(',');
+
+                    Product p = new Product(
+                        data[0],
+                        data[1],
+                        data[2],
+                        double.Parse(data[4])
+                        );
+                }
+            }
+            return products;
+        }
+
         static void ShowProducts(List<Product> products)
 
         {
