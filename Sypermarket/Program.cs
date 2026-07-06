@@ -26,30 +26,32 @@ namespace Sypermarket
                 Console.WriteLine("Избор:");
 
                 string choice = Console.ReadLine();
+                Console.WriteLine();
 
                 switch (choice)
                 {
                     case "1":
-                        AddProduct(products);
-                        break;
+                        Console.Write("Въведете ID: ");
+                        string productID = Console.ReadLine();
 
-                    case "2":
-                        SellProduct(products);
-                        break;
+                        Console.Write("Въведете име: ");
+                        string name = Console.ReadLine();
 
-                    case "3":
-                        CheckProduct(products);
-                        break;
+                        Console.Write("Въведете категория: ");
+                        string category = Console.ReadLine();
 
-                    case "4":
-                        ShowProducts(products);
-                        break;
+                        Console.Write("Въведете цена: ");
+                        double price = double.Parse(Console.ReadLine());
 
-                    case "5":
-                        return;
+                        Console.Write("Въведете количество: ");
+                        int quantity = int.Parse(Console.ReadLine());
 
-                    default:
-                        Console.WriteLine("Невалиден избор. Моля, опитайте отново.");
+                        Product newProduct = new Product(productID, name, category, price, quantity);
+                        products.Add(newProduct);
+
+                        SaveProducts(products);
+                        Console.WriteLine("Успешно добавен нов запис!");
+                        Console.WriteLine();
                         break;
                 }
             }
