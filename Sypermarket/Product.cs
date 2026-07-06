@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace Sypermarket
 {
-    internal class Product
-    {
-
      class Product
     {
         public string ProductID { get; set; }
@@ -25,8 +22,6 @@ namespace Sypermarket
         {
 
         }
-
-
         public Product(string id, string name, string category, double price, int quantity)
         {
             ProductID = id;
@@ -35,7 +30,5 @@ namespace Sypermarket
             Price = price;
             Quantity = quantity;
         }
-         
-        }
-    }
-}
+     }
+ }
