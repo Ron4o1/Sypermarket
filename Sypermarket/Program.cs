@@ -86,15 +86,11 @@ namespace Sypermarket
 
                 foreach (string line in lines)
                 {
-                    string[] data = line.Split('.');
-
-                    Product p = new Product(
-                        data[0],
-                        data[1],
-                        data[2],
-                        double.Parse(data[3]),
-                        int.Parse(data[4])
-                        );
+                    Product p = Product.FromFileRow(line);
+                    if (p != null)
+                    {
+                        products.Add(p);
+                    }
                 }
             }
             return products;

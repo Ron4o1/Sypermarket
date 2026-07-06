@@ -32,7 +32,12 @@ namespace Sypermarket
             return $"{ProductID};{Name};{Category};{Price};{Quantity}";
         }
 
-        public Product FromFileRow(string row)
+        public override string ToString()
+        {
+            return $"Ид: {ProductID}, Име: {Name}, Категория: {Category}, Цена: {Price:F2}, Количество: {Quantity}";
+        }
+
+        public static Product FromFileRow(string row)
         {
             string[] parts = row.Split(';');
             if (parts.Length == 5)
