@@ -54,20 +54,8 @@ namespace Sypermarket
                         Console.WriteLine();
                         break;
 
-                    case "3":
-                        Console.WriteLine("--- Списък с продукти ---");
-                        if (products.Count == 0)
-                        {
-                            Console.WriteLine("Списъкът е празен (няма записи във файла).");
-                        }
-                        else
-                        {
-                            foreach (Product p in products)
-                            {
-                                Console.WriteLine(p);
-                            }
-                        }
-                        Console.WriteLine();
+                    case "2":
+                        SellProduct(products);
                         break;
 
 
