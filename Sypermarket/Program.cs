@@ -76,6 +76,17 @@ namespace Sypermarket
             return products;
         }
 
+        static void SaveProducts(List<Product> products)
+        {
+            List<string> lines = new List<string>();
+
+            foreach (Product p in products)
+            {
+                lines.Add($"{p.ProductID},{p.Name},{p.Category},{p.Price},{p.Quantity}");
+            }
+            File.WriteAllLines(fileName, lines);
+        }
+
         static void ShowProducts(List<Product> products)
 
         {
