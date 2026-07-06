@@ -54,7 +54,7 @@ namespace Sypermarket
                         Console.WriteLine();
                         break;
 
-                    case "2":
+                    case "3":
                         Console.WriteLine("--- Списък с продукти ---");
                         if (products.Count == 0)
                         {
@@ -69,6 +69,8 @@ namespace Sypermarket
                         }
                         Console.WriteLine();
                         break;
+
+
                 }
             }
         }
