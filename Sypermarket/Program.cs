@@ -51,6 +51,45 @@ namespace Sypermarket
                         break;
                 }
 
+
+
+
+
+
+static void ShowProducts(List<Product> products)
+
+        {
+
+            Console.WriteLine();
+
+            foreach (Product p in products)
+
+            {
+
+                Console.WriteLine(“--------------------“);
+
+                Console.WriteLine($”ID: {p.ProductID}”);
+
+                Console.WriteLine($”Име: {p.Name}”);
+
+                Console.WriteLine($”Категория: {p.Category}”);
+
+                Console.WriteLine($”Цена: {p.Price} лв.”);
+
+                Console.WriteLine($”Количество: {p.Quantity}”);
+
+            }
+
+
+
+
+
+
+
+
+
+                
+
             }
             
         }
