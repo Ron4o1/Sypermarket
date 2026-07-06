@@ -32,13 +32,5 @@ namespace Sypermarket
             Price = price;
             Quantity = quantity;
         }
-
-
-
-
-
-
-
-        
     }
 }
