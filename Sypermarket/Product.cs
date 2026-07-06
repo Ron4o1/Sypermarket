@@ -25,6 +25,17 @@ namespace Sypermarket
         {
 
         }
+
+
+        public Product(string id, string name, string category, double price, int quantity)
+        {
+            ProductID = id;
+            Name = name;
+            Category = category;
+            Price = price;
+            Quantity = quantity;
+        }
+         
         }
     }
 }
