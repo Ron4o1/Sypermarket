@@ -22,6 +22,16 @@ namespace Sypermarket
                 Console.WriteLine("4. Справка на наличност");
                 Console.WriteLine("5. Изход");
                 Console.WriteLine("Избор:");
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        AddProduct(products);
+                        break;
+                }
+
             }
             
         }
