@@ -87,6 +87,32 @@ namespace Sypermarket
             File.WriteAllLines(fileName, lines);
         }
 
+        static void SellProduct(List<Product> products)
+        {
+            Console.WriteLine("ID: ");
+            string id = Console.ReadLine();
+
+            Console.Write("Име: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Категория: ");
+            string category = Console.ReadLine();
+
+            Console.Write("Цена: ");
+            double price = double.Parse(Console.ReadLine());
+
+            Console.Write("Количество: ");
+            int quantity = int.Parse(Console.ReadLine());
+
+            Product p = new Product(id, name, category, price, quantity);
+
+            products.Add(p);
+
+            SaveProducts(products);
+
+            Console.WriteLine("Продуктът е добавен успешно!");
+        }
+
         static void ShowProducts(List<Product> products)
 
         {
